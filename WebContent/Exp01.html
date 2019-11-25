@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Biblio</title>
+		<link rel="stylesheet" href="css/Menu.css">
+		<link rel="stylesheet" href="css/SPA.css">
+		<script type="text/javascript" src="js/Menu.js"></script>
+		<script type="text/javascript" src="js/Ajax.js"></script>
+		<script type="text/javascript" src="js/Controller.js"></script>
+		<script type="text/javascript" src="js/Views.js"></script>
+		<script type="text/javascript" src="js/Biblio.js"></script>
+		<script type="text/javascript" src="js/Book.js"></script>
+		<script type="text/javascript" src="js/Context.js"></script>
+		<script type="text/javascript" src="js/Actions.js"></script>
+		<script type="text/javascript" src="js/Main.js"></script>
+	</head>
+
+	<body onload="main(); getDocuments();">
+		<div class="menu">
+			<div class="float-menu-icon" onclick="showFloatMenu('float-menu')">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<span onclick="menu.show('nouveau-document')">Nouveau Document</span>
+			<span onclick="menu.show('recherche')">Recherche</span>
+			<span onclick="menu.show('liste-des-documents'); lister();">Liste des documents</span>
+		</div>
+
+		<div class="float-menu hidden" id="float-menu">
+			<span onclick="menu.show('nouveau-document'); showFloatMenu('float-menu');">Nouveau Document</span>
+			<span onclick="menu.show('recherche'); showFloatMenu('float-menu');">Recherche</span>
+			<span onclick="menu.show('liste-des-documents'); showFloatMenu('float-menu'); lister();">Liste des documents</span>
+		</div>
+
+		<div class="panel" id="nouveau-document">
+			<header>Nouveau Document</header>
+			<div id="success" class="hidden" onclick="hideSuccess()"></div>
+			<div class="form">
+				<form>
+					<table>
+						<tr>
+							<td>ISBN : </td>
+							<td><input type="text" size="40" id="isbn"></td>
+						</tr>
+						<tr>
+							<td>Titre : </td>
+							<td><input type="text" size="40" id="titre"></td>
+						</tr>
+						<tr>
+							<td>Année Publication : </td>
+							<td><input type="text" size="40" id="yearPublished"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><input type="button" class="btn" value="Valider" onclick="addDoc()" /></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+
+		<div class="panel hidden" id="recherche">
+			<header>Recherche de documents</header>
+			<div class="rechercher">
+				<form>
+					<table>
+						<tr>
+							<td><input type="text" id="keyword" placeholder="Mot clé .." /></td>
+							<td><input type="button" class="btn" value="Chercher" onclick="rechercher()" /></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<div>
+				<table id="searchTable" border="1" style="border-collapse: collapse; width: 100%; border-color: #EEEEEE;">
+				</table>
+			</div>
+		</div>
+
+		<div class="panel hidden" id="liste-des-documents">
+			<header>Liste des documents</header>
+			<div>
+				<table id="table" border="1" style="border-collapse: collapse; width: 100%; border-color: #EEEEEE;">
+				</table>
+			</div>
+		</div>
+
+		<div id="test"></div>
+	</body>
+</html>

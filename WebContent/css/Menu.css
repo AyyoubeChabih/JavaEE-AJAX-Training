@@ -1,0 +1,61 @@
+body {
+	padding: 0;
+	margin: 0;
+	font-size: 18px;
+    font-weight: bold;
+	font-family: consolas;
+	background-color: #EFEEEE;
+}
+
+/***********************************************************************************/
+
+.menu {
+	background-color: #4D5E72;
+	color: #fff;
+	font-family: consolas;
+	display: flex;
+	flex-direction: row;
+}
+
+.menu > * {
+	padding: 5px 10px 5px 10px;
+	cursor: pointer;
+	border-left: 1px solid #3F6A8A;
+}
+
+.menu > *:hover {
+	background-color: #3F6A8A;
+	color: #fff;
+}
+
+/***********************************************************************************/
+
+.float-menu-icon > * {
+	display: block;
+	width: 20px;
+	height: 2px;
+	background-color: #fff;
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+
+.float-menu {
+	position: absolute;
+	z-index: 100;
+	width: 25%;
+	background-color: rgba(240, 240, 240, 0.9);
+	box-shadow: 2px 2px 5px gray;
+	cursor: pointer;
+}
+
+.float-menu > * {
+	display: block;
+	font-family: consolas;
+	font-size: 14px;
+	color: black;
+	padding: 15px 10px 15px 10px;
+}
+
+.float-menu > *:hover {
+	background-color: gray;
+}
